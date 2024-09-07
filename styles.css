@@ -1,0 +1,1145 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    overflow: auto;
+}
+
+/* Style for login page */
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-container input {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.password-container {
+    position: relative;
+}
+
+.password-container i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.login-container button {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #5cb85c;
+    color: #fff;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #0275d8;
+}
+
+.login-container p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.login-container a {
+    color: #5cb85c;
+    text-decoration: none;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}
+
+/* General style */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 0px;
+    color: #060606;
+    font-size: 26px;
+
+}
+
+p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.table-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.button-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.add-product-button {
+    background-color: #5cb85c;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.add-product-button:hover {
+    background-color: #0275d8;
+}
+
+.service-order-button {
+    background-color: #5cb85c;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    max-width: 200px;
+    width: auto;
+    text-align: center;
+}
+
+.service-order-button:hover {
+    background-color: #0275d8;
+}
+
+#fullscreenButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+#fullscreenButton i {
+    font-size: 24px;
+    color: #fff;
+}
+
+body.active #fullscreenButton {
+    opacity: 1;
+}
+
+#tablesWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    font-size: 20px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+tr {
+    transition: background-color 0.5s;
+}
+
+.fullscreen {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.fullscreen #tablesWrapper {
+    flex-direction: column;
+    align-items: stretch;
+    height: 100%;
+}
+
+.fullscreen .table-container {
+    flex: 1;
+    overflow-y: auto;
+}
+
+#addProductScreen, #serviceOrderFormScreen {
+    max-height: 100vh;
+    overflow-y: auto;
+}
+
+#addProductScreen form, #serviceOrderFormScreen form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+}
+
+#addProductScreen .form-row, #serviceOrderFormScreen .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#addProductScreen .form-group, #serviceOrderFormScreen .form-group {
+    width: 48%;
+}
+
+#addProductScreen input, #serviceOrderFormScreen input, #serviceOrderFormScreen textarea, #addProductScreen select {
+    width: 290px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#addProductScreen select {
+    margin-bottom: 10px;
+}
+
+#addProductScreen label, #serviceOrderFormScreen label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.button-group button:hover {
+    background-color: #0275d8;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 10px;
+    margin: 20px 0;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#searchResults {
+    margin-top: 10px;
+}
+
+.product-list-item {
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.product-list-item button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.product-list-item button:hover {
+    background-color: #c9302c;
+}
+
+#productListContainer {
+    margin-top: 20px;
+}
+
+#serviceOrderFormScreen button {
+    margin-top: 20px;
+}
+
+#serviceOrderFormScreen h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#serviceOrderFormScreen textarea {
+    resize: vertical;
+}
+
+#serviceOrdersContainer {
+    margin-top: 20px;
+}
+
+/* New styles for service orders container */
+.service-orders-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.service-order-item {
+    flex: 1 1 45%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .service-orders-container {
+        display: block;
+    }
+
+    .service-order-item {
+        flex: 1 1 100%;
+    }
+}
+
+.service-order-item h3 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.service-order-item p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.service-order-item .buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.service-order-item .accept-button {
+    background-color: #5bc0de;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.service-order-item .accept-button:hover {
+    background-color: #31b0d5;
+}
+
+.service-order-item .complete-button {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.service-order-item .complete-button:hover {
+    background-color: #4cae4c;
+}
+
+.service-order-item .remove-button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.service-order-item .remove-button:hover {
+    background-color: #c9302c;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.filter-button {
+    background-color: #5bc0de;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.filter-button:hover {
+    background-color: #31b0d5;
+}
+
+.filter-button.active {
+    background-color: #0275d8;
+}
+
+.service-order-item .duration {
+    font-weight: bold;
+}
+
+/* Style for form buttons */
+button[type="submit"], .service-order-button,.button-group button  {
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    background-color: #5cb85c;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 5px;
+    max-width: 340px;
+    width: auto;
+}
+
+button[type="submit"]:hover, .service-order-button:hover {
+    background-color: #0275d8;
+}
+
+.form-button {
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    background-color: #5cb85c;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 5px;
+    max-width: 340px;
+   
+}
+
+.form-button:hover {
+    background-color: #0275d8;
+}
+
+/* Responsiveness */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 1000px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 750px;
+    }
+    .button-group {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .button-group button {
+        width: auto;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 500px;
+        padding: 10px;
+    }
+    .table-container {
+        margin-bottom: 10px;
+    }
+    th, td {
+        padding: 8px;
+    }
+    .button-group {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .button-group button {
+        width: auto;
+        margin-top: 10px;
+    }
+    .table-header {
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        max-width: 100%;
+        padding: 5px;
+    }
+    .button-group {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .table-header {
+        align-items: center;
+        text-align: center;
+    }
+    #serviceOrderFormScreen form .form-row, #addProductScreen form .form-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .form-buttons {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.notification-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.notification-card h2 {
+    margin-top: 0;
+}
+
+.notification-card button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.notification-card button:hover {
+    background-color: #0056b3;
+}
+
+#message-form {
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#message-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.message-card {
+    background-color: #ffef96;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    font-size:18px;
+    text-align: left;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    position: relative;
+}
+
+.message-card:before {
+    content: "";
+    width: 50px;
+    height: 10px;
+    background: #ffd700;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.message-card .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff5c5c;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.start-stop-button {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.start-stop-button.stop {
+    background-color: #d9534f;
+}
+
+/* Styles for each table's post-it container */
+.table-post-it-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 20px;
+    gap: 10px;
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* Styles for the post-it card */
+.post-it-card {
+    background-color: #fff9c4;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    text-align: left;
+    position: relative;
+    margin: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.post-it-card:hover {
+    transform: translateY(-5px);
+}
+
+.post-it-card h3 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.post-it-card p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.post-it-card .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff5c5c;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.autocomplete-suggestions {
+    position: absolute;
+    border: 1px solid #ccc;
+    background: #fff;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 1001;
+}
+
+.autocomplete-suggestions li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.autocomplete-suggestions li:hover {
+    background: #ddd;
+}
+
+/* Notification Styles */
+.notification-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.notification-card .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.notification-card .header {
+    margin-bottom: 10px;
+}
+
+.notification-card .header h1 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.notification-card .content p {
+    margin: 0;
+}
+
+.notification-card .event-details p {
+    margin: 5px 0;
+}
+
+.notification-card .footer img {
+    max-width: 100px;
+}
+ .notification-card {
+            background-color: #fff;
+            border-left: 5px solid #007bff;
+            margin-bottom: 20px;
+            padding: 15px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            position: relative;
+        }
+        .notification-card .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .notification-card .header h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        .notification-card .content p {
+            margin: 10px 0;
+        }
+        .notification-card .event-details p {
+            margin: 5px 0;
+        }
+        .notification-card .footer img {
+            width: 100px;
+            margin-top: 10px;
+        }
+        /* Container geral da notificação */
+.notifications-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Cartão de notificação */
+.notification-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    width: 300px;
+    position: relative;
+}
+
+/* Botão de fechar */
+.notification-card .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Cabeçalho da notificação */
+.notification-card .header h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Conteúdo da notificação */
+.notification-card .content {
+    margin-top: 10px;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* Detalhes do evento */
+.notification-card .event-details {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.notification-card .event-details p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+/* Rodapé da notificação */
+.notification-card .footer {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.notification-card .footer img {
+    width: 100px;
+}
+
+.nav-box {
+    background-color: #ffffff;
+    border: 1px solid #dcdde1;
+    border-radius: 8px;
+    width: 95%;
+    max-width: 900px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; /* Add margin to separate it from the tables */
+}
+
+.nav-tabs {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #dcdde1;
+    background-color: #f4f4f9;
+    border-radius: 8px 8px 0 0;
+}
+
+.nav-tabs button {
+    flex: 1;
+    padding: 12px 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: #576574;
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav-tabs button:hover {
+    background-color: #0984e3;
+    color: #fff;
+}
+
+.nav-tabs button.active {
+    border-bottom: 3px solid #0984e3;
+    background-color: #dfe6e9;
+    color: #0984e3;
+}
+
+.tab-content {
+    padding: 20px;
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@media (max-width: 500px) {
+    .nav-tabs button {
+        padding: 10px 0;
+        font-size: 14px;
+    }
+    .tab-content {
+        padding: 15px;
+    }
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 5px;
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.password-container {
+    position: relative;
+}
+
+.password-container i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.btn-login, .btn-signup {
+    padding: 10px 15px ;
+    font-size: 10px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-login:hover, .btn-signup:hover {
+    background-color: #0275d8;
+}
+/* Estilizar o modal para centralizar o conteúdo */
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center; /* Centraliza o conteúdo dentro do modal */
+}
+
+/* Melhorar o estilo dos itens do checklist */
+.checklist-item {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    margin-bottom: 15px;
+}
+
+.checklist-label {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o texto e o checkbox */
+    gap: 15px; /* Espaçamento entre checkbox e o texto */
+    font-size: 18px; /* Aumentar o tamanho da fonte */
+    color: #333;
+}
+
+.checklist-label input[type="checkbox"] {
+    transform: scale(1.2); /* Aumentar o tamanho do checkbox */
+}
+
+.checklist-label span {
+    font-size: 16px;
+    color: #555;
+    white-space: nowrap; /* Garantir que não quebre a linha */
+}
+
+/* Botão de concluir mais estilizado e centralizado */
+#checklistForm button[type="submit"] {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto 0; /* Centraliza o botão e adiciona espaçamento acima */
+    transition: background-color 0.3s;
+}
+
+#checklistForm button[type="submit"]:hover {
+    background-color: #4cae4c;
+}
+/* Estilo para o status de verificação */
+.status-verified {
+    font-size: 16px;
+    color: #28a745; /* Verde para indicar sucesso */
+    font-weight: bold;
+    margin-left: 10px;
+}

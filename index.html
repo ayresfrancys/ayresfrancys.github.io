@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Main Page</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+</head>
+
+<body>
+  <div id="mainContent" class="container">
+    <!-- Botões para abrir os modais -->
+    <button id="openLoginModal" class="btn-login">Login</button>
+    <button id="openSignUpModal" class="btn-signup">Sign Up</button>
+
+    <!-- Modal de Login -->
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeLoginModal">&times;</span>
+        <h2>Login</h2>
+        <form id="loginForm">
+          <input type="text" id="username" placeholder="Username" required />
+          <input type="password" id="password" placeholder="Password" required />
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal de Signup -->
+    <div id="signupModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeSignUpModal">&times;</span>
+        <h2>Sign Up</h2>
+        <form id="signUpForm">
+          <input type="text" id="newUsername" placeholder="Username" required />
+          <input type="email" id="email" placeholder="Email" required />
+          <input type="password" id="newPassword" placeholder="Password" required />
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
+    </div>
+    <!-- Modal Checklist -->
+    <div id="checklistModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeChecklistModal">&times;</span>
+        <h2>Checklist de Verificação</h2>
+        <form id="checklistForm">
+          <div id="checklistItemsContainer">
+            <!-- Os itens do checklist serão gerados dinamicamente aqui -->
+          </div>
+          <button type="submit">Concluir Checklist</button>
+        </form>
+      </div>
+    </div>
+
+
+
+
+
+    <div id="tablesWrapper">
+      <div class="table-header">
+        <div class="button-group">
+          <button id="openServiceOrderFormButton" class="service-order-button">
+            Service Order
+          </button>
+          <button id="addProductButton" class="add-product-button">
+            <i class="fas fa-plus"></i> Add Product
+          </button>
+          <button id="showNotificationButton" class="notification-button">
+            Create Notification
+          </button>
+        </div>
+      </div>
+      <div class="table-container">
+        <h2>3,000L Schedule</h2>
+        <table id="productTable1">
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>Description</th>
+              <th>Blends Total</th>
+              <th>Blend Qty</th>
+              <th>Allergens</th>
+              <th>Cures</th>
+              <th>Blends Actions</th>
+              <th>Additions Comments</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Table rows will be added here dynamically -->
+          </tbody>
+        </table>
+      </div>
+      <div class="table-container">
+        <h2>1,000L Schedule</h2>
+        <table id="productTable2">
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>Description</th>
+              <th>Blends Total</th>
+              <th>Blend Qty</th>
+              <th>Allergens</th>
+              <th>Cures</th>
+              <th>Blends Actions</th>
+              <th>Additions Comments</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Table rows will be added here dynamically -->
+          </tbody>
+        </table>
+      </div>
+      <div class="table-container">
+        <h2>660L Schedule</h2>
+        <table id="productTable3">
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>Description</th>
+              <th>Blends Total</th>
+              <th>Blend Qty</th>
+              <th>Allergens</th>
+              <th>Cures</th>
+              <th>Blends Actions</th>
+              <th>Additions Comments</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Table rows will be added here dynamically -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Nav Box Section -->
+      <div class="nav-box">
+        <div class="nav-tabs">
+          <button class="tab-link active" data-tab="orders">Orders</button>
+          <button class="tab-link" data-tab="post-it">Post It</button>
+          <button class="tab-link" data-tab="notifications">
+            Notifications
+          </button>
+        </div>
+        <div id="orders" class="tab-content active">
+          <div id="serviceOrdersContainer">
+            <div class="filter-buttons">
+              <button id="filterAll" class="filter-button active">All</button>
+              <button id="filterInProgress" class="filter-button">
+                In Progress
+              </button>
+              <button id="filterCompleted" class="filter-button">
+                Completed
+              </button>
+            </div>
+            <div id="serviceOrdersList"></div>
+          </div>
+        </div>
+        <div id="post-it" class="tab-content">
+          <div id="postItContainer1" class="table-post-it-container"></div>
+          <div id="postItContainer2" class="table-post-it-container"></div>
+          <div id="postItContainer3" class="table-post-it-container"></div>
+        </div>
+        <div id="notifications" class="tab-content">
+          <div class="notifications-container" id="notifications-container"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Service Order -->
+  <div id="serviceOrderModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('serviceOrderModal')">&times;</span>
+      <h2>Service Order</h2>
+      <form id="serviceOrderForm">
+        <div class="form-group">
+          <label for="orderNumber">Order Number</label>
+          <input type="text" id="orderNumber" name="orderNumber" readonly />
+        </div>
+        <div class="form-group">
+          <label for="serviceDateTime">Date and Time</label>
+          <input type="text" id="serviceDateTime" name="serviceDateTime" readonly />
+        </div>
+        <div class="form-group">
+          <label for="productCode">Product Code</label>
+          <input type="text" id="productCode" name="productCode" required />
+        </div>
+        <div class="form-group">
+          <label for="serviceDescription">Service Description</label>
+          <input type="text" id="serviceDescription" name="serviceDescription" required />
+        </div>
+        <div class="form-group">
+          <label for="technicianName">Technician Name</label>
+          <input type="text" id="technicianName" name="technicianName" required />
+        </div>
+        <div class="form-group">
+          <label for="serviceNotes">Notes</label>
+          <textarea id="serviceNotes" name="serviceNotes" rows="4" required></textarea>
+        </div>
+        <button type="submit">Submit</button>
+        <button type="button" id="backToTablesButtonFromServiceOrder" class="form-button">
+          Back to Tables
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Add Product -->
+  <div id="addProductModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('addProductModal')">&times;</span>
+      <h2>Add Product</h2>
+      <form id="addProductForm">
+        <div class="form-row">
+          <div class="form-group">
+            <input type="text" id="productCode" placeholder="Code" required />
+          </div>
+          <div class="form-group">
+            <input type="text" id="productDescription" placeholder="Description" required />
+          </div>
+          <div class="form-group">
+            <input type="number" id="blendsTotal" placeholder="Blends Total" required />
+          </div>
+          <div class="form-group">
+            <input type="text" id="blendQty" placeholder="Blend Qty" required />
+          </div>
+          <div class="form-group">
+            <input type="text" id="allergens" placeholder="Allergens" required />
+          </div>
+          <div class="form-group">
+            <input type="text" id="cures" placeholder="Cures" required />
+          </div>
+          <div class="form-group">
+            <input type="text" id="blendsActions" placeholder="Blends Actions" required />
+          </div>
+          <div class="form-group">
+            <input type="text" id="additionsComments" placeholder="Additions Comments" required />
+          </div>
+        </div>
+        <button type="submit">Add Product</button>
+      </form>
+      <div id="productListContainer">
+        <h2>Registered Products List</h2>
+        <input type="text" id="searchInput" placeholder="Search by code" />
+        <div id="searchResults"></div>
+        <div id="productList"></div>
+      </div>
+      <div class="button-group">
+        <button id="importButton">Import XLSX File</button>
+        <input type="file" id="fileInput" accept=".xlsx" style="display: none" />
+        <button id="backToTablesButton">Back to Tables</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Create Notification -->
+  <div id="notificationModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('notificationModal')">&times;</span>
+      <h2>Create Notification</h2>
+      <form id="notificationForm">
+        <div class="form-group">
+          <label for="notificationTitle">Title</label>
+          <input type="text" id="notificationTitle" required />
+        </div>
+        <div class="form-group">
+          <label for="notificationDescription">Description</label>
+          <textarea id="notificationDescription" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="notificationDay">Day</label>
+          <input type="date" id="notificationDay" required />
+        </div>
+        <div class="form-group">
+          <label for="notificationTime">Time</label>
+          <input type="time" id="notificationTime" required />
+        </div>
+        <div class="form-group">
+          <label for="notificationLocation">Location</label>
+          <input type="text" id="notificationLocation" required />
+        </div>
+        <button type="submit">Create Notification</button>
+      </form>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
