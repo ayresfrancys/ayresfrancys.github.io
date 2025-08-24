@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Production Scheduling System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="container-fluid">
+    <ul class="nav nav-tabs" id="mainTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="production-tab" data-bs-toggle="tab" data-bs-target="#production"
+          type="button" role="tab">
+          Production
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="orders-tab" data-bs-toggle="tab" data-bs-target="#orders" type="button" role="tab">
+          Service Orders
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="postit-tab" data-bs-toggle="tab" data-bs-target="#postit" type="button" role="tab">
+          Finished
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="notifications-tab" data-bs-toggle="tab" data-bs-target="#notifications"
+          type="button" role="tab">
+          Notifications
+        </button>
+      </li>
+    </ul>
+
+    <div class="tab-content p-3 border border-top-0 rounded-bottom" id="mainTabsContent">
+      <div class="tab-pane fade show active" id="production" role="tabpanel">
+        <div class="table-container">
+          <h4 class="table-title">3.000L Schedule</h4>
+          <div class="table-responsive">
+            <table class="table table-striped table-hover table-fixed" id="table3000LTable">
+              <thead class="table-dark">
+                <tr>
+                  <th class="col-code">Code</th>
+                  <th class="col-desc">Description</th>
+                  <th class="col-blends">Blends Total</th>
+                  <th class="col-qty">Blend Qty</th>
+                  <th class="col-allergens">Allergens</th>
+                  <th class="col-cures">Cures</th>
+                  <th class="col-actions">Blends Actions</th>
+                  <th class="col-comments">Additions Comments</th>
+                  <th class="col-status">Status</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="table-container mt-4">
+          <h4 class="table-title">1.000L Schedule</h4>
+          <div class="table-responsive">
+            <table class="table table-striped table-hover table-fixed" id="table1000LTable">
+              <thead class="table-dark">
+                <tr>
+                  <th class="col-code">Code</th>
+                  <th class="col-desc">Description</th>
+                  <th class="col-blends">Blends Total</th>
+                  <th class="col-qty">Blend Qty</th>
+                  <th class="col-allergens">Allergens</th>
+                  <th class="col-cures">Cures</th>
+                  <th class="col-actions">Blends Actions</th>
+                  <th class="col-comments">Additions Comments</th>
+                  <th class="col-status">Status</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="table-container mt-4">
+          <h4 class="table-title">660L Schedule</h4>
+          <div class="table-responsive">
+            <table class="table table-striped table-hover table-fixed" id="table660LTable">
+              <thead class="table-dark">
+                <tr>
+                  <th class="col-code">Code</th>
+                  <th class="col-desc">Description</th>
+                  <th class="col-blends">Blends Total</th>
+                  <th class="col-qty">Blend Qty</th>
+                  <th class="col-allergens">Allergens</th>
+                  <th class="col-cures">Cures</th>
+                  <th class="col-actions">Blends Actions</th>
+                  <th class="col-comments">Additions Comments</th>
+                  <th class="col-status">Status</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="orders" role="tabpanel">
+        <div class="btn-group mb-3" role="group">
+          <button type="button" class="btn btn-outline-primary active" id="filterAll">
+            All
+          </button>
+          <button type="button" class="btn btn-outline-primary" id="filterInProgress">
+            In Progress
+          </button>
+          <button type="button" class="btn btn-outline-primary" id="filterCompleted">Completed
+          </button>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-striped table-hover" id="ordersTable">
+            <thead class="table-dark">
+              <tr>
+                <th>Order</th>
+                <th>Date/Time</th>
+                <th>Product</th>
+                <th>Description</th>
+                <th>Technician</th>
+                <th>Notes</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="postit" role="tabpanel">
+        <div class="row">
+          <div class="col-md-4">
+            <h4>3.000L Post-Its</h4>
+            <div class="post-it-container" id="postIt3000L"></div>
+          </div>
+          <div class="col-md-4">
+            <h4>1.000L Post-Its</h4>
+            <div class="post-it-container" id="postIt1000L"></div>
+          </div>
+          <div class="col-md-4">
+            <h4>660L Post-Its</h4>
+            <div class="post-it-container" id="postIt660L"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="notifications" role="tabpanel">
+        <div class="row" id="notificationsContainer"></div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="fixed-bottom bg-light p-3 border-top">
+    <div class="d-flex justify-content-center gap-3">
+      <button class="btn btn-primary" id="addProductBtn">
+        <i class="bi bi-plus-circle"></i> Add Product
+      </button>
+      <button class="btn btn-primary" id="serviceOrderBtn">
+        <i class="bi bi-clipboard-plus"></i> Service Order
+      </button>
+      <button class="btn btn-primary" id="notificationBtn">
+        <i class="bi bi-bell-plus"></i> Create Notification
+      </button>
+    </div>
+  </div>
+  </div>
+
+  <div class="modal fade" id="addProductModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add Product</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="addProductForm">
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="productCode" class="form-label">Code</label>
+                <input type="text" class="form-control" id="productCode" required />
+              </div>
+              <div class="col-md-6">
+                <label for="productDescription" class="form-label">Description</label>
+                <input type="text" class="form-control" id="productDescription" />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="blendsTotal" class="form-label">Blends Total</label>
+                <input type="text" class="form-control" id="blendsTotal" required />
+              </div>
+              <div class="col-md-6">
+                <label for="blendQty" class="form-label">Blend Qty</label>
+                <input type="text" class="form-control" id="blendQty" required />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="allergens" class="form-label">Allergens</label>
+                <input type="text" class="form-control" id="allergens" />
+              </div>
+              <div class="col-md-6">
+                <label for="cures" class="form-label">Cures</label>
+                <input type="text" class="form-control" id="cures" />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="blendsActions" class="form-label">Blends Actions</label>
+                <input type="text" class="form-control" id="blendsActions" />
+              </div>
+              <div class="col-md-6">
+                <label for="additionsComments" class="form-label">Additions Comments</label>
+                <input type="text" class="form-control" id="additionsComments" />
+              </div>
+            </div>
+            <div class="mb-3">
+              <button type="button" class="btn btn-outline-secondary" id="importExcelBtn">
+                <i class="bi bi-file-earmark-excel"></i> Import from Excel
+              </button>
+              <input type="file" id="excelFileInput" accept=".xlsx,.xls" style="display: none" />
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Cancel
+          </button>
+          <button type="button" class="btn btn-primary" id="submitProductBtn">
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="serviceOrderModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Service Order</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="serviceOrderForm">
+            <div class="mb-3">
+              <label for="orderNumber" class="form-label">Order Number</label>
+              <input type="text" class="form-control" id="orderNumber" readonly />
+            </div>
+            <div class="mb-3">
+              <label for="orderDateTime" class="form-label">Date and Time</label>
+              <input type="text" class="form-control" id="orderDateTime" readonly />
+            </div>
+            <div class="mb-3">
+              <label for="orderProductCode" class="form-label">Product Code</label>
+              <input type="text" class="form-control" id="orderProductCode" />
+            </div>
+            <div class="mb-3">
+              <label for="serviceDescription" class="form-label">Service Description</label>
+              <input type="text" class="form-control" id="serviceDescription" />
+            </div>
+            <div class="mb-3">
+              <label for="technicianName" class="form-label">Technician Name</label>
+              <input type="text" class="form-control" id="technicianName" />
+            </div>
+            <div class="mb-3">
+              <label for="serviceNotes" class="form-label">Notes</label>
+              <textarea class="form-control" id="serviceNotes" rows="3"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Cancel
+          </button>
+          <button type="button" class="btn btn-primary" id="submitServiceOrderBtn">
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="notificationModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Create Notification</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="notificationForm">
+            <div class="mb-3">
+              <label for="notificationTitle" class="form-label">Title</label>
+              <input type="text" class="form-control" id="notificationTitle" required />
+            </div>
+            <div class="mb-3">
+              <label for="notificationDescription" class="form-label">Description</label>
+              <textarea class="form-control" id="notificationDescription" rows="3" required></textarea>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="notificationDay" class="form-label">Day</label>
+                <input type="date" class="form-control" id="notificationDay" required />
+              </div>
+              <div class="col-md-6">
+                <label for="notificationTime" class="form-label">Time</label>
+                <input type="time" class="form-control" id="notificationTime" required />
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="notificationLocation" class="form-label">Location</label>
+              <input type="text" class="form-control" id="notificationLocation" required />
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Cancel
+          </button>
+          <button type="button" class="btn btn-primary" id="submitNotificationBtn">
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="productSelectionModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="productSelectionModalTitle">
+            Add Product to Table
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <input type="text" class="form-control" id="productSearchInput" placeholder="Search products..." />
+          </div>
+          <div class="mb-3">
+            <label for="productDropdown" class="form-label">Select product to add:</label>
+            <select class="form-select" id="productDropdown"></select>
+          </div>
+          <div class="mb-3">
+            <label for="blendsTotalInput" class="form-label">Blends Total</label>
+            <input type="text" class="form-control" id="blendsTotalInput" placeholder="Enter Blends Total" required />
+          </div>
+          <div class="mb-3">
+            <label for="blendQtyInput" class="form-label">Blend Qty</label>
+            <input type="text" class="form-control" id="blendQtyInput" placeholder="Enter Blend Qty" required />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Blends Actions (required):</label>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="washCheckbox" value="WASH" />
+              <label class="form-check-label" for="washCheckbox">WASH</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="brushCheckbox" value="BRUSH" />
+              <label class="form-check-label" for="brushCheckbox">BRUSH</label>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="additionsCommentsInput" class="form-label">Additions Comments</label>
+            <textarea class="form-control" id="additionsCommentsInput" rows="3"
+              placeholder="Enter additional comments... (optional)"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Cancel
+          </button>
+          <button type="button" class="btn btn-primary" id="addProductToTableBtn">
+            Add
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
